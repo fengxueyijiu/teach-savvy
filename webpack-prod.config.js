@@ -21,6 +21,14 @@ const config = {
         exclude: /node_modules/
       },
       {
+        test: /\.(eot|otf|ttf|svg|woff|woff2)\w*/,
+        loader: 'file-loader'
+      },
+      {
+        test: /\.(eot|otf|ttf|svg|woff|woff2)\w*/,
+        loader: 'file-loader'
+      },
+      {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           use: [
@@ -28,11 +36,7 @@ const config = {
               loader: 'css-loader',
               options: { minimize: true }
             },
-            'postcss-loader',
-            {
-              test: /\.(eot|otf|ttf|svg|woff|woff2)\w*/,
-              loader: 'file-loader'
-            }
+            'postcss-loader'
           ]
         })
       }
